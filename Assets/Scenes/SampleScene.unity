@@ -180,6 +180,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c417f5a0743006d42baa52d60c9a242b, type: 3}
+--- !u!4 &417945059 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1810972278035026193, guid: 56708a9c1c960984eb9b4ae07c0b579e, type: 3}
+  m_PrefabInstance: {fileID: 1222826757024340915}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &496446241
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -306,6 +311,22 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2574569192383663642, guid: 56708a9c1c960984eb9b4ae07c0b579e, type: 3}
+      propertyPath: Harpoon
+      value: 
+      objectReference: {fileID: 4847950415874213884, guid: 1c4cdc8c2a05ecf4198b830ffcd60db8, type: 3}
+    - target: {fileID: 2574569192383663642, guid: 56708a9c1c960984eb9b4ae07c0b579e, type: 3}
+      propertyPath: canFire
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2574569192383663642, guid: 56708a9c1c960984eb9b4ae07c0b579e, type: 3}
+      propertyPath: reloadTime
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2574569192383663642, guid: 56708a9c1c960984eb9b4ae07c0b579e, type: 3}
+      propertyPath: bulletTransform
+      value: 
+      objectReference: {fileID: 417945059}
     - target: {fileID: 2750953102810245693, guid: 56708a9c1c960984eb9b4ae07c0b579e, type: 3}
       propertyPath: m_Name
       value: Character

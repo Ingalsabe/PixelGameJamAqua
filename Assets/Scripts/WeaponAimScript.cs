@@ -6,6 +6,13 @@ public class WeaponAimScript : MonoBehaviour
 {
     private Camera mainCamera;
     private Vector3 mousePosition;
+    private float timer;
+
+    public bool canFire;
+    public float reloadTime = 2f;
+    public float harpoonSpeed = 4.5f;
+    public GameObject Harpoon;
+    public Transform bulletTransform;
 
     // Start is called before the first frame update
     void Start()
@@ -21,5 +28,21 @@ public class WeaponAimScript : MonoBehaviour
         float rotZ = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
 
         transform.rotation = Quaternion.Euler(0,0,rotZ);
+
+        if(!canFire)
+        {
+            timer += Time.deltaTime;
+            if(timer > reloadTime)
+            {
+                canFire = true;
+                timer = 0;
+            }
+        }
+
+        if(Input.GetMouseButton(0) && canFire)
+        {
+            canFire = false;
+            Instantiate(Harpoon,bulletTransform.position,Quaternion.identity);
+        }
     }
 }
