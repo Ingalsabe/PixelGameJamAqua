@@ -7,8 +7,8 @@ public class CharacterMovementScript : MonoBehaviour
 {
     private float verticalMovement;
     private float horizontalMovement;
-    private float horizontalSpeed = 6f;
-    private float upwardSpeed = 12f;
+    private float horizontalSpeed = 3f;
+    private float upwardSpeed = 6f;
 
     [SerializeField] private Rigidbody2D rb;
 
