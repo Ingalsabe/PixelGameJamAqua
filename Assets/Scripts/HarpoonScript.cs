@@ -7,7 +7,10 @@ public class HarpoonScript : MonoBehaviour
     private Vector3 mousePosition;
     private Camera cam;
     private Rigidbody2D rb;
-    public float force;
+    private float timer;
+
+    [SerializeField] private float despawnTimer = 4f;
+    [SerializeField] private float force;
 
     // Start is called before the first frame update
     void Start()
@@ -18,11 +21,19 @@ public class HarpoonScript : MonoBehaviour
         Vector3 direction = mousePosition - transform.position;
         Vector3 rotation = transform.position - mousePosition;
         rb.velocity = new Vector2(direction.x, direction.y).normalized * force;
+        timer = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(timer < despawnTimer)
+        {
+            timer += Time.deltaTime;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 }

@@ -327,6 +327,10 @@ PrefabInstance:
       propertyPath: bulletTransform
       value: 
       objectReference: {fileID: 417945059}
+    - target: {fileID: 2629408383614280640, guid: 56708a9c1c960984eb9b4ae07c0b579e, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2750953102810245693, guid: 56708a9c1c960984eb9b4ae07c0b579e, type: 3}
       propertyPath: m_Name
       value: Character
@@ -338,6 +342,10 @@ PrefabInstance:
     - target: {fileID: 2968149711870829086, guid: 56708a9c1c960984eb9b4ae07c0b579e, type: 3}
       propertyPath: m_GravityScale
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4910187623496239392, guid: 56708a9c1c960984eb9b4ae07c0b579e, type: 3}
+      propertyPath: m_Name
+      value: CharacterSprite
       objectReference: {fileID: 0}
     - target: {fileID: 4952457017625208972, guid: 56708a9c1c960984eb9b4ae07c0b579e, type: 3}
       propertyPath: m_LocalPosition.x
