@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1940677149209432361}
   - component: {fileID: 3523689379735420990}
   - component: {fileID: 8275948308571684740}
-  - component: {fileID: -166282774160359339}
+  - component: {fileID: -5528424932564453159}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -102,7 +102,7 @@ MonoBehaviour:
   playerCharacter: {fileID: 0}
   damageCooldown: 1
   damageToPlayer: 10
---- !u!60 &-166282774160359339
+--- !u!60 &-5528424932564453159
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
