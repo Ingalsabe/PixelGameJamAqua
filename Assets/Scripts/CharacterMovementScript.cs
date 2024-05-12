@@ -11,6 +11,8 @@ public class CharacterMovementScript : MonoBehaviour
     public float horizontalSpeed = 3f;
     public float upwardSpeed = 6f;
 
+    public GameObject swimAnimationPrefab;
+
     [SerializeField] private Rigidbody2D rb;
 
     // Start is called before the first frame update
@@ -28,6 +30,7 @@ public class CharacterMovementScript : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             rb.velocity = new Vector2(rb.velocity.x, upwardSpeed);
+            Instantiate(swimAnimationPrefab, transform.position, Quaternion.identity);
         }
     }
 

@@ -259,6 +259,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   horizontalSpeed: 3
   upwardSpeed: 6
+  swimAnimationPrefab: {fileID: 1801604868145782, guid: e969aaa734be044efad60bd50e7fb070, type: 3}
   rb: {fileID: 2968149711870829086}
 --- !u!95 &-7068394155465586021
 Animator:

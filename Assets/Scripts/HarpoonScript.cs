@@ -9,7 +9,7 @@ public class HarpoonScript : MonoBehaviour
     private Rigidbody2D rb;
     private float timer;
 
-    [SerializeField] private float despawnTimer = 4f;
+    [SerializeField] private float despawnTimer = 3f;
     [SerializeField] private float force;
 
     // Start is called before the first frame update
@@ -43,7 +43,7 @@ public class HarpoonScript : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             Destroy(collision.gameObject);
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
     }
 
