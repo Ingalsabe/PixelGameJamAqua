@@ -45,4 +45,11 @@ public class WeaponAimScript : MonoBehaviour
             Instantiate(Harpoon,bulletTransform.position, Quaternion.Euler(0,0,rotZ + 46));
         }
     }
+
+    public void FlipHarpoon()
+    {
+        Vector3 currentScale = gameObject.transform.localScale;
+        currentScale.x *= -1;
+        gameObject.transform.localScale = currentScale;
+    }
 }

@@ -7,7 +7,9 @@ public class CharacterMovementScript : MonoBehaviour
 {
     private float verticalMovement;
     private float horizontalMovement;
-   
+    private bool facingRight = true;
+
+
     public float horizontalSpeed = 3f;
     public float upwardSpeed = 6f;
 
@@ -32,10 +34,30 @@ public class CharacterMovementScript : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, upwardSpeed);
             Instantiate(swimAnimationPrefab, transform.position, Quaternion.identity);
         }
+
+        if(horizontalMovement > 0f && !facingRight)
+        {
+            Flip();
+        }
+        if(horizontalMovement < 0f && facingRight)
+        {
+            Flip();
+        }
     }
 
     private void FixedUpdate()
     {
         rb.velocity = new Vector2(horizontalMovement * horizontalSpeed, rb.velocity.y);
+    }
+
+    private void Flip()
+    {
+        Vector3 currentScale = gameObject.transform.localScale;
+        currentScale.x *= -1;
+        gameObject.transform.localScale = currentScale;
+
+        GameObject.Find("Rotation Point").GetComponent<WeaponAimScript>().FlipHarpoon();
+
+        facingRight = !facingRight;
     }
 }

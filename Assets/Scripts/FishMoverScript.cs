@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class FishMoverScript : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class FishMoverScript : MonoBehaviour
     void Update()
     {
         transform.position = Vector2.MoveTowards(transform.position, playerCharacter.transform.position, speed * Time.deltaTime);
+        Vector3 currentScale = transform.localScale;
+
         if (timeAfterAttack < damageCooldown)
         {
             timeAfterAttack += Time.deltaTime;
@@ -29,6 +32,15 @@ public class FishMoverScript : MonoBehaviour
         {
             canAttack = true;
         }
+
+        if (playerCharacter.transform.position.x < transform.position.x)
+        {
+            currentScale.x = Mathf.Abs(currentScale.x) * -1;
+        }
+        else
+            currentScale.x = Mathf.Abs(currentScale.x);
+
+        transform.localScale = currentScale;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
