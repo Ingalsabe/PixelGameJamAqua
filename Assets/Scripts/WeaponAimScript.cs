@@ -42,7 +42,7 @@ public class WeaponAimScript : MonoBehaviour
         if(Input.GetMouseButton(0) && canFire)
         {
             canFire = false;
-            Instantiate(Harpoon,bulletTransform.position,Quaternion.identity);
+            Instantiate(Harpoon,bulletTransform.position, Quaternion.Euler(0,0,rotZ + 46));
         }
     }
 }

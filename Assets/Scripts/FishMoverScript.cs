@@ -31,10 +31,10 @@ public class FishMoverScript : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log(collision.gameObject.name);
-        if(collision.gameObject.name == "Character")
+        if (collision.gameObject.name == "Character")
         {
             collision.gameObject.GetComponent<PlayerHealth>().DamagePlayer(damageToPlayer);
             canAttack = false;
