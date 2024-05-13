@@ -64,10 +64,4 @@ public class WeaponAimScript : MonoBehaviour
         currentScale.x *= -1;
         gameObject.transform.localScale = currentScale;
     }
-
-    private void ReloadProgressBarFillIn()
-    {
-        Vector3 currentScale = progBar.transform.localScale;
-
-    }
 }
