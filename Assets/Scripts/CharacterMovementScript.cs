@@ -15,6 +15,8 @@ public class CharacterMovementScript : MonoBehaviour
 
     public GameObject swimAnimationPrefab;
 
+    public AudioSource swimSound;
+
     [SerializeField] private Rigidbody2D rb;
 
     // Start is called before the first frame update
@@ -33,6 +35,7 @@ public class CharacterMovementScript : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, upwardSpeed);
             Instantiate(swimAnimationPrefab, transform.position, Quaternion.identity);
+            swimSound.Play(0);
         }
 
         if(horizontalMovement > 0f && !facingRight)

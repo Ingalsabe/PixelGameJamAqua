@@ -16,6 +16,8 @@ public class WeaponAimScript : MonoBehaviour
     public GameObject Harpoon;
     public Transform bulletTransform;
 
+    public AudioSource shootSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -55,6 +57,7 @@ public class WeaponAimScript : MonoBehaviour
             canFire = false;
             progBar.SetActive(true);
             Instantiate(Harpoon,bulletTransform.position, Quaternion.Euler(0,0,rotZ + 46));
+            shootSound.Play(0);
         }
     }
 

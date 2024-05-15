@@ -657,7 +657,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &301928909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2497,7 +2497,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1824917348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2862,6 +2862,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloatingPlatform
       objectReference: {fileID: 0}
+    - target: {fileID: 1154813061625480, guid: 558dd30cadc8e40dabe68aa1757a45c4, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 4764760876744222, guid: 558dd30cadc8e40dabe68aa1757a45c4, type: 3}
       propertyPath: m_LocalScale.x
       value: 7
@@ -3194,6 +3198,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: topLeftArea
       objectReference: {fileID: 0}
+    - target: {fileID: 5069874767287149241, guid: d472a10163d02744c93f9fa2f41f99a0, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 8931848635211045436, guid: d472a10163d02744c93f9fa2f41f99a0, type: 3}
       propertyPath: m_LocalPosition.x
       value: -67.32
@@ -3307,6 +3315,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: topRightArea
       objectReference: {fileID: 0}
+    - target: {fileID: 8095844900355826302, guid: 79093407e52c5fc48b53243685dafb4a, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3323,6 +3335,10 @@ PrefabInstance:
     - target: {fileID: 8010849226287131806, guid: 9e038574b90881547b47fa79f3f7a68d, type: 3}
       propertyPath: m_Name
       value: bottomLeftArea
+      objectReference: {fileID: 0}
+    - target: {fileID: 8010849226287131806, guid: 9e038574b90881547b47fa79f3f7a68d, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 8867512618896881002, guid: 9e038574b90881547b47fa79f3f7a68d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3438,6 +3454,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shrine
       objectReference: {fileID: 0}
+    - target: {fileID: 102176391078062789, guid: 500ddfe18bd6a06438bd29902cb4a540, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 6157404081832843615, guid: 500ddfe18bd6a06438bd29902cb4a540, type: 3}
       propertyPath: m_LocalPosition.x
       value: -34.04
@@ -3494,6 +3514,10 @@ PrefabInstance:
     - target: {fileID: 2350905192431593411, guid: d144d817d7afc624bb23be110de67891, type: 3}
       propertyPath: m_Name
       value: bottomRightArea
+      objectReference: {fileID: 0}
+    - target: {fileID: 2350905192431593411, guid: d144d817d7afc624bb23be110de67891, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 3439775415311531407, guid: d144d817d7afc624bb23be110de67891, type: 3}
       propertyPath: m_LocalPosition.x

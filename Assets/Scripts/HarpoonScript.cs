@@ -12,6 +12,11 @@ public class HarpoonScript : MonoBehaviour
     [SerializeField] private float despawnTimer = 3f;
     [SerializeField] private float force;
 
+    public AudioClip[] deathSounds;
+    public AudioSource source;
+
+    public GameObject fishDeathPrefab;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +27,8 @@ public class HarpoonScript : MonoBehaviour
         Vector3 rotation = transform.position - mousePosition;
         rb.velocity = new Vector2(direction.x, direction.y).normalized * force;
         timer = 0;
+
+        source = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -44,7 +51,12 @@ public class HarpoonScript : MonoBehaviour
         {
             Destroy(collision.gameObject);
             //Destroy(gameObject);
+            Instantiate(fishDeathPrefab, collision.gameObject.transform.position, Quaternion.identity);
+            source.clip = deathSounds[Random.Range(0, deathSounds.Length)];
+            source.Play();
         }
+
+
     }
 
 }
