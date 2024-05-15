@@ -12,10 +12,8 @@ public class HarpoonScript : MonoBehaviour
     [SerializeField] private float despawnTimer = 3f;
     [SerializeField] private float force;
 
-    public AudioClip[] deathSounds;
-    public AudioSource source;
-
-    public GameObject fishDeathPrefab;
+    [SerializeField] private AudioClip[] deathSounds;
+    private AudioSource source;
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +25,6 @@ public class HarpoonScript : MonoBehaviour
         Vector3 rotation = transform.position - mousePosition;
         rb.velocity = new Vector2(direction.x, direction.y).normalized * force;
         timer = 0;
-
         source = GetComponent<AudioSource>();
     }
 
@@ -46,14 +43,14 @@ public class HarpoonScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.gameObject.name);
+        //Debug.Log(collision.gameObject.name);
         if (collision.gameObject.tag == "Enemy")
         {
-            Destroy(collision.gameObject);
-            //Destroy(gameObject);
-            Instantiate(fishDeathPrefab, collision.gameObject.transform.position, Quaternion.identity);
-            source.clip = deathSounds[Random.Range(0, deathSounds.Length)];
-            source.Play();
+            if (collision.gameObject.GetComponent<FishMoverScript>().takeDamage())
+            {
+                source.clip = deathSounds[Random.Range(0, deathSounds.Length)];
+                source.Play();
+            }
         }
 
 

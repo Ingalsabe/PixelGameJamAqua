@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
+using static Unity.VisualScripting.Member;
 using static UnityEngine.GraphicsBuffer;
 
 public class FishMoverScript : MonoBehaviour
@@ -13,14 +15,21 @@ public class FishMoverScript : MonoBehaviour
     private float timeAfterAttack;
     private bool canAttack = true;
 
+    public int health = 1;
+
+    
+    [SerializeField] private GameObject fishDeathPrefab;
+
     void Awake()
     {
         playerCharacter = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
     }
 
+
     // Update is called once per frame
     void Update()
     {
+
         transform.position = Vector2.MoveTowards(transform.position, playerCharacter.transform.position, speed * Time.deltaTime);
         Vector3 currentScale = transform.localScale;
 
@@ -45,12 +54,24 @@ public class FishMoverScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.gameObject.name);
+        //Debug.Log(collision.gameObject.name);
         if (collision.gameObject.name == "Character")
         {
             collision.gameObject.GetComponent<PlayerHealth>().DamagePlayer(damageToPlayer);
             canAttack = false;
             timeAfterAttack = 0f;
         }
+    }
+
+    public bool takeDamage()
+    {
+        health--;
+        if (health <= 0)
+        {
+            Instantiate(fishDeathPrefab, gameObject.transform.position, Quaternion.identity);
+            Destroy(gameObject);  
+            return true;
+        }
+        return false;
     }
 }

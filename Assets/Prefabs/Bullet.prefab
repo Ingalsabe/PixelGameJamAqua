@@ -95,8 +95,8 @@ GameObject:
   - component: {fileID: 647090949041374472}
   - component: {fileID: 5930633475868931627}
   - component: {fileID: 9044180508763983267}
+  - component: {fileID: 6369481061702335128}
   - component: {fileID: 769462678783146246}
-  - component: {fileID: 3003750953990247501}
   - component: {fileID: 3888949613026405698}
   m_Layer: 0
   m_Name: Bullet
@@ -200,29 +200,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &769462678783146246
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4847950415874213884}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c998ded96fb202b4794696c3115007b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  despawnTimer: 3
-  force: 9
-  deathSounds:
-  - {fileID: 8300000, guid: e47f3dac95c0c42649aa8f62b987c84f, type: 3}
-  - {fileID: 8300000, guid: 8e1adc93c1bb94c55b41da757e547995, type: 3}
-  - {fileID: 8300000, guid: 683d33e3d2b3443d997fe995f148fa73, type: 3}
-  - {fileID: 8300000, guid: a45becdbbad154eedb9df87af4906071, type: 3}
-  - {fileID: 8300000, guid: c437d3c7681bd4709b3b51dad8b7273d, type: 3}
-  source: {fileID: 0}
-  fishDeathPrefab: {fileID: 1820545851295154, guid: b22a24e39bda14f3bb2b1feb1d07ee14, type: 3}
---- !u!82 &3003750953990247501
+--- !u!82 &6369481061702335128
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -233,7 +211,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 0.35
   m_Pitch: 1
   Loop: 0
@@ -242,7 +220,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 0.4113956
+  MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -318,6 +296,26 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &769462678783146246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4847950415874213884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c998ded96fb202b4794696c3115007b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawnTimer: 3
+  force: 9
+  deathSounds:
+  - {fileID: 8300000, guid: e47f3dac95c0c42649aa8f62b987c84f, type: 3}
+  - {fileID: 8300000, guid: 8e1adc93c1bb94c55b41da757e547995, type: 3}
+  - {fileID: 8300000, guid: 683d33e3d2b3443d997fe995f148fa73, type: 3}
+  - {fileID: 8300000, guid: a45becdbbad154eedb9df87af4906071, type: 3}
+  - {fileID: 8300000, guid: c437d3c7681bd4709b3b51dad8b7273d, type: 3}
 --- !u!60 &3888949613026405698
 PolygonCollider2D:
   m_ObjectHideFlags: 0
