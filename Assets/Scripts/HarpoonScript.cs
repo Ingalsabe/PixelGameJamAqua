@@ -13,6 +13,7 @@ public class HarpoonScript : MonoBehaviour
     [SerializeField] private float force;
 
     [SerializeField] private AudioClip[] deathSounds;
+    [SerializeField] private AudioClip damageSound;
     private AudioSource source;
 
     // Start is called before the first frame update
@@ -49,6 +50,11 @@ public class HarpoonScript : MonoBehaviour
             if (collision.gameObject.GetComponent<FishMoverScript>().takeDamage())
             {
                 source.clip = deathSounds[Random.Range(0, deathSounds.Length)];
+                source.Play();
+            }
+            else 
+            {
+                source.clip = damageSound;
                 source.Play();
             }
         }

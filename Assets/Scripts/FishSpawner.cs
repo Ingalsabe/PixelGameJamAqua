@@ -31,7 +31,7 @@ public class FishSpawner : MonoBehaviour
         if (timeUntilSpawn <= 0 && ableToSpawn)
         {
             int fishSpawnPercent = Random.Range(0, 100);
-            if (fishSpawnPercent >= 90)
+            if (fishSpawnPercent >= 85)
             {
                 Instantiate(enemyPrefabs[1], transform.position, Quaternion.identity); //Spawn Big Fish
             }
@@ -56,8 +56,6 @@ public class FishSpawner : MonoBehaviour
         
         if (collision.gameObject.tag == "Wall")
         {
-            Debug.Log(collision.gameObject.name);
-            //Debug.Log("test");
             ableToSpawn = false;
         }
     }

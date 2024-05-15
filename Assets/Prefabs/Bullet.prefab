@@ -316,6 +316,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 683d33e3d2b3443d997fe995f148fa73, type: 3}
   - {fileID: 8300000, guid: a45becdbbad154eedb9df87af4906071, type: 3}
   - {fileID: 8300000, guid: c437d3c7681bd4709b3b51dad8b7273d, type: 3}
+  damageSound: {fileID: 8300000, guid: 6e8772b49f34d402a90016ed445d8a2f, type: 3}
 --- !u!60 &3888949613026405698
 PolygonCollider2D:
   m_ObjectHideFlags: 0

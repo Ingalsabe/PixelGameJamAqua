@@ -211,6 +211,8 @@ MonoBehaviour:
   damageToPlayer: 15
   health: 2
   fishDeathPrefab: {fileID: 1820545851295154, guid: b22a24e39bda14f3bb2b1feb1d07ee14, type: 3}
+  flashMaterial: {fileID: 2100000, guid: 8028bd700ff4a1448a6b0c86467e1ba3, type: 2}
+  flashDuration: 0.1
 --- !u!60 &7289065036046876646
 PolygonCollider2D:
   m_ObjectHideFlags: 0

@@ -20,9 +20,19 @@ public class FishMoverScript : MonoBehaviour
     
     [SerializeField] private GameObject fishDeathPrefab;
 
+    [SerializeField] private Material flashMaterial;
+    [SerializeField] private float flashDuration;
+
+    private SpriteRenderer spriteRenderer;
+    private Material originalMaterial;
+    private Coroutine flashRoutine;
+
     void Awake()
     {
         playerCharacter = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        originalMaterial = spriteRenderer.material;
     }
 
 
@@ -69,9 +79,33 @@ public class FishMoverScript : MonoBehaviour
         if (health <= 0)
         {
             Instantiate(fishDeathPrefab, gameObject.transform.position, Quaternion.identity);
-            Destroy(gameObject);  
+            Destroy(gameObject);
             return true;
+        }
+        else 
+        {
+            Flash();
         }
         return false;
     }
+
+    private IEnumerator FlashCoroutine()
+    {
+        spriteRenderer.material = flashMaterial;
+        yield return new WaitForSeconds(flashDuration);
+        spriteRenderer.material = originalMaterial;
+
+        flashRoutine = null;
+    }
+
+    public void Flash()
+    {
+        if (flashRoutine != null)
+        {
+            StopCoroutine(flashRoutine);
+        }
+
+        flashRoutine = StartCoroutine(FlashCoroutine());
+    }
+
 }

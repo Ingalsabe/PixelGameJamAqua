@@ -49,8 +49,8 @@ MonoBehaviour:
   - {fileID: 5171858441050444795, guid: 515bf3aa36cae2b4f80fdcfcecc41ddf, type: 3}
   - {fileID: 8779132071665894527, guid: 17ebad6dee3e5694bb3422c0115b6e78, type: 3}
   - {fileID: 1219129750267205394, guid: 56c6991c5c271314a8c9a819605ddfda, type: 3}
-  minSpawnTime: 2
-  maxSpawnTime: 5
+  minSpawnTime: 3
+  maxSpawnTime: 6
   timeUntilSpawn: 0
 --- !u!58 &5019275566051745321
 CircleCollider2D:
