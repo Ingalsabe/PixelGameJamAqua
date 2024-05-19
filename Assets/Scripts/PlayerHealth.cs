@@ -34,5 +34,7 @@ public class PlayerHealth : MonoBehaviour
     public void IncreaseMaxHealth()
     {
         maxHealth += 20f;
+        health += 20f;
+        healthText.text = "Health: " + health.ToString();
     }
 }

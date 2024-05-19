@@ -309,6 +309,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   despawnTimer: 3
+  penetration: 1
   force: 9
   deathSounds:
   - {fileID: 8300000, guid: e47f3dac95c0c42649aa8f62b987c84f, type: 3}

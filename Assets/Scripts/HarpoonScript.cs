@@ -11,12 +11,13 @@ public class HarpoonScript : MonoBehaviour
     private int targetsHit;
 
     [SerializeField] private float despawnTimer = 3f;
-    [SerializeField] private int penetration;
     [SerializeField] private float force;
 
     [SerializeField] private AudioClip[] deathSounds;
     [SerializeField] private AudioClip damageSound;
     private AudioSource source;
+
+    public int penetration;
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +30,6 @@ public class HarpoonScript : MonoBehaviour
         rb.velocity = new Vector2(direction.x, direction.y).normalized * force;
         timer = 0;
         targetsHit = 0;
-        penetration = 1;
         source = GetComponent<AudioSource>();
     }
 

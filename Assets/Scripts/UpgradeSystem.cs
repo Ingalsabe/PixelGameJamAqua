@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEngine.Rendering.Universal;
 using UnityEngine;
 
 public class UpgradeSystem : MonoBehaviour
@@ -8,7 +9,7 @@ public class UpgradeSystem : MonoBehaviour
     [SerializeField] private GameObject character;
     [SerializeField] private GameObject weapon;
     [SerializeField] private GameObject harpoon;
-    [SerializeField] private GameObject light;
+    [SerializeField] private Light2D myLight;
 
     private int penTiers = 0;
     private int cooldownTiers = 0;
@@ -25,9 +26,12 @@ public class UpgradeSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        penTiers = 0;
+        cooldownTiers = 0;
+        lightTiers = 0;
+        staminaTiers = 0;
+        healthTiers = 0;
     }
-
 
     // Update is called once per frame
     void Update()
@@ -47,31 +51,81 @@ public class UpgradeSystem : MonoBehaviour
 
     public void PenUpgrade()
     {
-        harpoon.GetComponent<HarpoonScript>().IncreasePen();
-        HideSystem();
+        if(penTiers < penTiersMax)
+        {
+            harpoon.GetComponent<HarpoonScript>().IncreasePen();
+            HideSystem();
+            penTiers++;
+            if(penTiers == penTiersMax)
+                GameObject.Find("PenetrationUpgradeButton").SetActive(false);
+        }
+        else
+        {
+            GameObject.Find("PenetrationUpgradeButton").SetActive(false);
+        }
     }
 
     public void CooldownUpgrade()
     {
-        weapon.GetComponent<WeaponAimScript>().IncreaseWeaponSpeed();
-        HideSystem();
+        if(cooldownTiers < cooldownTiersMax)
+        {
+            weapon.GetComponent<WeaponAimScript>().IncreaseWeaponSpeed();
+            HideSystem();
+            cooldownTiers++;
+            if(cooldownTiers == cooldownTiersMax)
+                GameObject.Find("SpeedUpgradeButton").SetActive(false);
+        }
+        else
+        {
+            GameObject.Find("SpeedUpgradeButton").SetActive(false);
+        }
     }
 
     public void LightLevel()
     {
-        light.GetComponent<Light>().intensity += 0.15f;
-        HideSystem();
+        if(lightTiers < lightTiersMax)
+        {
+            myLight.GetComponent<Light2D>().intensity += 0.15f;
+            HideSystem();
+            lightTiers++;
+            if(lightTiers == lightTiersMax)
+                GameObject.Find("LightUpgradeButton").SetActive(false);
+        }
+        else
+        {
+            GameObject.Find("LightUpgradeButton").SetActive(false);
+        }
     }
 
     public void StaminaLevel()
     {
-        character.GetComponent<CharacterMovementScript>().DecreaseJumpStamina();
-        HideSystem();
+        if (staminaTiers < staminaTiersMax)
+        {
+            character.GetComponent<CharacterMovementScript>().DecreaseJumpStamina();
+            HideSystem();
+            staminaTiers++;
+            if(staminaTiers == staminaTiersMax)
+                GameObject.Find("StaminaUpgradeButton").SetActive(false);
+        }
+        else
+        {
+            GameObject.Find("StaminaUpgradeButton").SetActive(false);
+        }
     }
 
     public void HealthLevel()
     {
-        character.GetComponent<PlayerHealth>().IncreaseMaxHealth();
-        HideSystem();
+        if (healthTiers < healthTiersMax)
+        {
+            character.GetComponent<PlayerHealth>().IncreaseMaxHealth();
+            HideSystem();
+            healthTiers++;
+            if(healthTiers == healthTiersMax)
+                GameObject.Find("HealthUpgradeButton").SetActive(false);
+        }
+        else
+        {
+            GameObject.Find("HealthUpgradeButton").SetActive(false);
+        }
     }
 }

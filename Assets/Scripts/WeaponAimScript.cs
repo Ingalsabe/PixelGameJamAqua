@@ -9,11 +9,11 @@ public class WeaponAimScript : MonoBehaviour
     private float timer;
 
     [SerializeField] private GameObject progBar;
+    [SerializeField] GameObject Harpoon;
 
     public bool canFire;
     public float reloadTime = 1.5f;
     public float harpoonSpeed = 4.5f;
-    public GameObject Harpoon;
     public Transform bulletTransform;
 
     public AudioSource shootSound;
@@ -23,6 +23,7 @@ public class WeaponAimScript : MonoBehaviour
     {
         reloadTime = 1.5f;
         mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+        Harpoon.GetComponent<HarpoonScript>().penetration = 1;
         progBar.SetActive(false);
     }
 

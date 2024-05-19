@@ -9,7 +9,7 @@ public class CharacterMovementScript : MonoBehaviour
     private float horizontalMovement;
     private float timer;
     private float stamina;
-    private int staminaToJump;
+    [SerializeField] private int staminaToJump;
     private bool facingRight = true;
 
 
@@ -28,10 +28,10 @@ public class CharacterMovementScript : MonoBehaviour
     void Start()
     {
         staminaText = GameObject.Find("PlayerStaminaText").GetComponent<TextMeshProUGUI>();
-        staminaText.text = "Stamina: " + stamina.ToString();
         staminaToJump = 25;
         stamina = 100;
         verticalMovement = 0f;
+        staminaText.text = "Stamina: " + stamina.ToString();
     }
 
     // Update is called once per frame
@@ -47,6 +47,7 @@ public class CharacterMovementScript : MonoBehaviour
             swimSound.Play(0);
             stamina -= staminaToJump;
             staminaText.text = "Stamina: " + stamina.ToString();
+            timer = 0f;
         }
 
         if(horizontalMovement > 0f && !facingRight)

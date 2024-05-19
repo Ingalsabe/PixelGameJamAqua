@@ -136,6 +136,7 @@ MonoBehaviour:
   harpoonSpeed: 4.5
   Harpoon: {fileID: 4847950415874213884, guid: 1c4cdc8c2a05ecf4198b830ffcd60db8, type: 3}
   bulletTransform: {fileID: 8198221770842741631}
+  shootSound: {fileID: 0}
 --- !u!1 &2750953102810245693
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,9 +315,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8ae7bf183a001341a0f94955d1e8cf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  staminaToJump: 0
   horizontalSpeed: 3
   upwardSpeed: 6
   swimAnimationPrefab: {fileID: 1801604868145782, guid: e969aaa734be044efad60bd50e7fb070, type: 3}
+  swimSound: {fileID: 0}
+  harpoon: {fileID: 4847950415874213884, guid: 1c4cdc8c2a05ecf4198b830ffcd60db8, type: 3}
+  cooldownStamina: 1.5
+  staminaText: {fileID: 0}
   rb: {fileID: 2968149711870829086}
 --- !u!95 &-7068394155465586021
 Animator:
