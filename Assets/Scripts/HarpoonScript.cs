@@ -8,8 +8,10 @@ public class HarpoonScript : MonoBehaviour
     private Camera cam;
     private Rigidbody2D rb;
     private float timer;
+    private int targetsHit;
 
     [SerializeField] private float despawnTimer = 3f;
+    [SerializeField] private int penetration;
     [SerializeField] private float force;
 
     [SerializeField] private AudioClip[] deathSounds;
@@ -26,6 +28,8 @@ public class HarpoonScript : MonoBehaviour
         Vector3 rotation = transform.position - mousePosition;
         rb.velocity = new Vector2(direction.x, direction.y).normalized * force;
         timer = 0;
+        targetsHit = 0;
+        penetration = 1;
         source = GetComponent<AudioSource>();
     }
 
@@ -51,15 +55,24 @@ public class HarpoonScript : MonoBehaviour
             {
                 source.clip = deathSounds[Random.Range(0, deathSounds.Length)];
                 source.Play();
+                targetsHit++;
             }
             else 
             {
                 source.clip = damageSound;
                 source.Play();
+                targetsHit++;
             }
         }
 
-
+        if(targetsHit >= penetration)
+        {
+            Destroy(gameObject);
+        }
     }
 
+    public void IncreasePen()
+    {
+        penetration++;
+    }
 }

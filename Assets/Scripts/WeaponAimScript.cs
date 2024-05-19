@@ -21,6 +21,7 @@ public class WeaponAimScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        reloadTime = 1.5f;
         mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         progBar.SetActive(false);
     }
@@ -40,7 +41,7 @@ public class WeaponAimScript : MonoBehaviour
         {
             timer += Time.deltaTime;
 
-            currentScale.x = timer * 0.1f;
+            currentScale.x = timer * (0.01f / (reloadTime / 15));
             progBar.transform.localScale = currentScale;
 
             if (timer > reloadTime)
@@ -66,5 +67,10 @@ public class WeaponAimScript : MonoBehaviour
         Vector3 currentScale = gameObject.transform.localScale;
         currentScale.x *= -1;
         gameObject.transform.localScale = currentScale;
+    }
+
+    public void IncreaseWeaponSpeed()
+    {
+        reloadTime -= 0.3f;
     }
 }

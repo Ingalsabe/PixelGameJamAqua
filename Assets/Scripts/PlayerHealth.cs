@@ -13,6 +13,7 @@ public class PlayerHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        maxHealth = 100f;
         health = maxHealth;
         healthText = GameObject.Find("PlayerHealthText").GetComponent<TextMeshProUGUI>();
         healthText.text = "Health: " + health.ToString();
@@ -28,5 +29,10 @@ public class PlayerHealth : MonoBehaviour
     {
         health -= damage;
         healthText.text = "Health: " + health.ToString();
+    }
+
+    public void IncreaseMaxHealth()
+    {
+        maxHealth += 20f;
     }
 }
