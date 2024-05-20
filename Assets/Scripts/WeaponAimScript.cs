@@ -7,9 +7,11 @@ public class WeaponAimScript : MonoBehaviour
     private Camera mainCamera;
     private Vector3 mousePosition;
     private float timer;
+    private bool weaponIsFlipped;
 
     [SerializeField] private GameObject progBar;
     [SerializeField] GameObject Harpoon;
+    [SerializeField] GameObject weapon;
 
     public bool canFire;
     public float reloadTime = 1.5f;
@@ -25,6 +27,7 @@ public class WeaponAimScript : MonoBehaviour
         mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         Harpoon.GetComponent<HarpoonScript>().penetration = 1;
         progBar.SetActive(false);
+        weaponIsFlipped = false;
     }
 
     // Update is called once per frame
@@ -61,6 +64,17 @@ public class WeaponAimScript : MonoBehaviour
             Instantiate(Harpoon,bulletTransform.position, Quaternion.Euler(0,0,rotZ + 46));
             shootSound.Play(0);
         }
+
+        if(!weaponIsFlipped && (gameObject.transform.eulerAngles.z <= -90 || gameObject.transform.eulerAngles.z > 90))
+        {
+            //flipWeapon();
+            weaponIsFlipped = true;
+        }
+        else if (weaponIsFlipped && (gameObject.transform.eulerAngles.z > -90 || gameObject.transform.eulerAngles.z <= 90))
+        {
+            //flipWeapon();
+            weaponIsFlipped = false;
+        }
     }
 
     public void FlipHarpoon()
@@ -68,6 +82,16 @@ public class WeaponAimScript : MonoBehaviour
         Vector3 currentScale = gameObject.transform.localScale;
         currentScale.x *= -1;
         gameObject.transform.localScale = currentScale;
+    }
+
+    private void flipWeapon()
+    {
+        Quaternion currentRotation = weapon.transform.rotation;
+        if (weapon.transform.rotation.z == 30)
+            currentRotation.z = -150;
+        else
+            currentRotation.z = 30;
+        weapon.transform.rotation = currentRotation;
     }
 
     public void IncreaseWeaponSpeed()

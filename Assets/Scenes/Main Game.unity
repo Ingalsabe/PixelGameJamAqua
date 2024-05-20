@@ -3827,6 +3827,11 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.21, y: 0.25}
   m_EdgeRadius: 0
+--- !u!1 &1700990496 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7029263157772494758, guid: 56708a9c1c960984eb9b4ae07c0b579e, type: 3}
+  m_PrefabInstance: {fileID: 1222826757024340915}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1701406261
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5331,9 +5336,53 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1810972278035026193, guid: 56708a9c1c960984eb9b4ae07c0b579e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1810972278035026193, guid: 56708a9c1c960984eb9b4ae07c0b579e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1810972278035026193, guid: 56708a9c1c960984eb9b4ae07c0b579e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1810972278035026193, guid: 56708a9c1c960984eb9b4ae07c0b579e, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1810972278035026193, guid: 56708a9c1c960984eb9b4ae07c0b579e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9659258
+      objectReference: {fileID: 0}
+    - target: {fileID: 1810972278035026193, guid: 56708a9c1c960984eb9b4ae07c0b579e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1810972278035026193, guid: 56708a9c1c960984eb9b4ae07c0b579e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1810972278035026193, guid: 56708a9c1c960984eb9b4ae07c0b579e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.2588191
+      objectReference: {fileID: 0}
+    - target: {fileID: 1810972278035026193, guid: 56708a9c1c960984eb9b4ae07c0b579e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1810972278035026193, guid: 56708a9c1c960984eb9b4ae07c0b579e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1810972278035026193, guid: 56708a9c1c960984eb9b4ae07c0b579e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2574569192383663642, guid: 56708a9c1c960984eb9b4ae07c0b579e, type: 3}
+      propertyPath: weapon
+      value: 
+      objectReference: {fileID: 1700990496}
     - target: {fileID: 2574569192383663642, guid: 56708a9c1c960984eb9b4ae07c0b579e, type: 3}
       propertyPath: progBar
       value: 
@@ -5361,6 +5410,26 @@ PrefabInstance:
     - target: {fileID: 2750953102810245693, guid: 56708a9c1c960984eb9b4ae07c0b579e, type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 2859495927566770583, guid: 56708a9c1c960984eb9b4ae07c0b579e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2859495927566770583, guid: 56708a9c1c960984eb9b4ae07c0b579e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2859495927566770583, guid: 56708a9c1c960984eb9b4ae07c0b579e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2859495927566770583, guid: 56708a9c1c960984eb9b4ae07c0b579e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2859495927566770583, guid: 56708a9c1c960984eb9b4ae07c0b579e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2968149711870829086, guid: 56708a9c1c960984eb9b4ae07c0b579e, type: 3}
       propertyPath: m_Mass

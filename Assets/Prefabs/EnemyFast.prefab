@@ -137,7 +137,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -195,3 +195,5 @@ MonoBehaviour:
   damageToPlayer: 5
   health: 1
   fishDeathPrefab: {fileID: 1820545851295154, guid: b22a24e39bda14f3bb2b1feb1d07ee14, type: 3}
+  flashMaterial: {fileID: 0}
+  flashDuration: 0
